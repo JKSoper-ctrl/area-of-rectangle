@@ -25,3 +25,5 @@ fn main() {
     println!("rect1 is {rect1:?}");
     dbg!(&rect1);
 }
+
+//this is to test new version of lug
