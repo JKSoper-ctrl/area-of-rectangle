@@ -23,6 +23,13 @@ impl Rectangle {
             height: size,
         }
     }
+
+    fn max(self, other: Rectangle) -> Rectangle {
+        Rectangle {
+            width: self.width.max(other.width),
+            height: self.height.max(other.height),
+        }
+    }
 }
 
 fn main() {
@@ -50,6 +57,17 @@ fn main() {
 
     r.set_width(2);
     Rectangle::set_width(&mut r, 2);
+
+    let rect = Rectangle {
+        width: 0,
+        height: 0
+    };
+
+    println!("{}", rect.area());
+
+    let other_rect = Rectangle { width: 1, heightL 1 };
+
+    let max_rect = rect.max(other_rect);
 
     println!("Can rect1 hold rect2 {}", rect1.can_hold(&rect2));
     println!("Can rect1 hold rect3 {}", rect1.can_hold(&rect3));
