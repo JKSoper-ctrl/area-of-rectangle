@@ -13,6 +13,10 @@ impl Rectangle {
         self.width > other.width && self.height > other.height
     }
 
+    fn set_width(&mut self, width: u32) {
+        self.width = width;
+    }
+
     fn square(size: u32) -> Self {
         Self{
             width: size,
@@ -35,6 +39,17 @@ fn main() {
         height: 45,
     };
     let square1 = Rectangle::square(25);
+
+    let mut r = Rectangle {
+        width: 1,
+        height: 2
+    };
+    let area1 = r.area();
+    let area2 = Rectangle::area(&r);
+    assert_eq!(area1, area2);
+
+    r.set_width(2);
+    Rectangle::set_width(&mut r, 2);
 
     println!("Can rect1 hold rect2 {}", rect1.can_hold(&rect2));
     println!("Can rect1 hold rect3 {}", rect1.can_hold(&rect3));
