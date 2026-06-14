@@ -81,5 +81,3 @@ fn main() {
     dbg!(&rect1);
     dbg!(&square1);
 }
-
-//this is to test new version of lug
